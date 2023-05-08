@@ -1,1 +1,21 @@
-﻿<h1>burası viewcsfdgompasdasdonent</h1>
+﻿@using EntityLayer.Concrete
+@model List<Feature>
+
+<header class="header">
+    @foreach (var item in Model)
+    {        
+        <!-- Image -->
+        <div class="img-wrapper">
+            <img src="~/Template/images/@item.ImgUrl" alt="image" />
+        </div>
+
+        <!-- banner -->
+        <div class="banner">
+            <h1 class="display-1 mb-4">@item.Title</h1>
+            <p class="h2 mb-4">@item.Description1</p>
+            <p class="h2 mb-5">@item.Description2</p>
+            <button class="btn btn-dark text-uppercase"><a href="#projects" class="text-white text-decoration-none">Discover now</a></button>
+
+        </div>
+    }
+</header>

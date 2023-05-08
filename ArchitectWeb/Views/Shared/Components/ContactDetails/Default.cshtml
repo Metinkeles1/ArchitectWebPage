@@ -1,0 +1,57 @@
+﻿@using EntityLayer.Concrete
+@model List<Contact>
+
+@foreach (var item in Model)
+{
+    <div class="col-md-6 mt-53 px-1 mt-2">
+        <iframe src="@item.AddressMap" width="100%" height="480" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+}
+                            </div>
+
+@foreach (var item in Model)
+{
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <div class="col-sm-2">
+                <div class="pb-1">Name:</div>
+            </div>
+            <div class="col-sm-10">
+                <div class="pb-1 fw-bolder">Visual Project</div>
+            </div>
+            <div class="col-sm-2">
+                <div class="pb-1">Email:</div>
+            </div>
+            <div class="col-sm-10">
+                <div class="pb-1 fw-bolder">@item.Email</div>
+            </div>
+            <div class="col-sm-2">
+                <div class="pb-1">Phone:</div>
+            </div>
+            <div class="col-sm-10">
+                <div class="pb-1 fw-bolder">@item.Phone</div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="col-sm-2">
+                <div class="pb-1">Adress:</div>
+            </div>
+            <div class="col-sm-10">
+                <div class="pb-1 fw-bolder">@item.AddressText</div>
+            </div>
+            <div class="col-sm-2">
+                <div class="pb-1">Email:</div>
+            </div>
+            <div class="col-sm-10">
+                <div class="pb-1 fw-bolder">@item.Email2</div>
+            </div>
+            <div class="col-sm-2">
+                <div class="pb-1">Phone:</div>
+            </div>
+            <div class="col-sm-10">
+                <div class="pb-1 fw-bolder">@item.Phone2</div>
+            </div>
+        </div>
+    </div>
+}
