@@ -20,6 +20,8 @@ namespace DataAccessLayer.Concrete
         public DbSet<Project> Projects { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<ServiceItem> ServiceItems { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Message> Messages { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
     }
 }
