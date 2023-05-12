@@ -52,5 +52,34 @@ namespace ArchitectWeb.Controllers
             projectManager.TDelete(values);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult EditProject(int id)
+        {
+            ViewBag.v1 = "Project Edit";
+            ViewBag.v2 = "Projects";
+            ViewBag.v3 = "Edit Project";
+            var values = projectManager.TGetByID(id);
+            return View(values);
+        }
+        [HttpPost]
+        public IActionResult EditProject(Project project)
+        {
+            ProjectValidator validationRules = new ProjectValidator();
+            ValidationResult results = validationRules.Validate(project);
+            if(results.IsValid)
+            {
+                projectManager.TUpdate(project);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
+        }
     }
 }
