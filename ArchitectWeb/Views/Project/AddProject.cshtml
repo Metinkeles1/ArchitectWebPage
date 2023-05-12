@@ -14,15 +14,19 @@
         <br/>
         @Html.Label("Project Name")
         @Html.TextBoxFor(x => x.Name, new{@class = "form-control"})
+        @Html.ValidationMessageFor(x=>x.Name)
         <br/>
         @Html.Label("Project Image")
         @Html.TextBoxFor(x => x.ImageUrl, new{@class = "form-control"})
+        @Html.ValidationMessageFor(x=>x.ImageUrl)
         <br />
         @Html.Label("Project Image Small")
         @Html.TextBoxFor(x => x.ImageUrlSmall, new{@class = "form-control"})
+        @Html.ValidationMessageFor(x=>x.ImageUrlSmall)
         <br />
         @Html.Label("Project Url")
         @Html.TextBoxFor(x => x.ProjectUrl, new{@class = "form-control"})
+        @Html.ValidationMessageFor(x=>x.ProjectUrl)
         <br />
         <button class="btn btn-info mx-3">Save</button>
     }
