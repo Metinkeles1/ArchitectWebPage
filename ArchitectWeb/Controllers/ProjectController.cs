@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ArchitectWeb.Controllers
@@ -27,8 +29,21 @@ namespace ArchitectWeb.Controllers
         [HttpPost]
         public IActionResult AddProject(Project p)
         {           
-            projectManager.TAdd(p);
-            return RedirectToAction("Index");
+            ProjectValidator validationRules = new ProjectValidator();
+            ValidationResult validationResult = validationRules.Validate(p);
+            if (validationResult.IsValid)
+            {
+                projectManager.TAdd(p);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in validationResult.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
     }
 }
