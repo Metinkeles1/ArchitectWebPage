@@ -21,6 +21,8 @@
                             <th scope="col" class="sort" data-sort="name">Projects</th>
                             <th scope="col" class="sort" data-sort="budget">Project Address</th>
                             <th scope="col" class="sort" data-sort="status">Status</th>                          
+                            <th scope="col" class="sort" data-sort="delete"></th>                          
+                            <th scope="col" class="sort" data-sort="edit"></th>                          
                             <th scope="col"></th>
                         </tr>
                     </thead>
@@ -46,8 +48,19 @@
                                     <i class="bg-warning"></i>
                                     <span class="status">pending</span>
                                 </span>
+                            </td>  
+                            <td>
+                                <span class="badge badge-dot">
+                                        <a href="/Project/DeleteProject/@item.ProjectId" id="DeleteBtn"
+                                           onclick="return confirm('Silmek istediğinize emin misiniz?');" class="btn btn-outline-danger">Delete</a>
+                                </span>
+                            </td> 
+                            <td>
+                                <span class="badge badge-dot mr-4">
+                                    <a href="#" class="btn btn-outline-warning">Edit</a>
+                                </span>
                             </td>
-                                            
+                                                 
                             <td class="text-right">
                                 <div class="dropdown">
                                     <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

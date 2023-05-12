@@ -45,5 +45,12 @@ namespace ArchitectWeb.Controllers
             }
             return View();
         }
+
+        public IActionResult DeleteProject(int id)
+        {
+            var values = projectManager.TGetByID(id);
+            projectManager.TDelete(values);
+            return RedirectToAction("Index");
+        }
     }
 }
