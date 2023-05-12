@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concrete.Project
+
+@{
+    ViewData["Title"] = "AddProject";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0 bg-primary d-inline-flex px-2 py-2 text-white">Add Project Page</h3>
+</div>
+
+<div class="mx-4 my-2">
+    @using (Html.BeginForm("AddProject", "Project", FormMethod.Post)){
+        <br/>
+        @Html.Label("Project Name")
+        @Html.TextBoxFor(x => x.Name, new{@class = "form-control"})
+        <br/>
+        @Html.Label("Project Image")
+        @Html.TextBoxFor(x => x.ImageUrl, new{@class = "form-control"})
+        <br />
+        @Html.Label("Project Image Small")
+        @Html.TextBoxFor(x => x.ImageUrlSmall, new{@class = "form-control"})
+        <br />
+        @Html.Label("Project Url")
+        @Html.TextBoxFor(x => x.ProjectUrl, new{@class = "form-control"})
+        <br />
+        <button class="btn btn-info mx-3">Save</button>
+    }
+</div>

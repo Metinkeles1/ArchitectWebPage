@@ -1,0 +1,73 @@
+﻿@using EntityLayer.Concrete
+@model List<Project>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br/>
+<div class="row">
+    <div class="col">
+        <div class="card bg-default shadow">
+            <div class="card-header bg-transparent border-0">
+                <h3 class="text-white mb-0">Projects</h3>
+            </div>
+            <div class="table-responsive">
+                <table class="table align-items-center table-dark table-flush">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" class="sort" data-sort="name">Projects</th>
+                            <th scope="col" class="sort" data-sort="budget">Project Address</th>
+                            <th scope="col" class="sort" data-sort="status">Status</th>                          
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="list">
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <th scope="row">
+                                <div class="media align-items-center">
+                                    <a href="#" class="avatar rounded-circle mr-3">
+                                        <img alt="Image placeholder" src="@item.ImageUrlSmall">
+                                    </a>
+                                    <div class="media-body">@item.ProjectId
+                                        <span class="name mb-0 text-sm">@item.Name</span>
+                                    </div>
+                                </div>
+                            </th>
+                            <td class="budget">
+                                @item.ProjectUrl
+                            </td>
+                            <td>
+                                <span class="badge badge-dot mr-4">
+                                    <i class="bg-warning"></i>
+                                    <span class="status">pending</span>
+                                </span>
+                            </td>
+                                            
+                            <td class="text-right">
+                                <div class="dropdown">
+                                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                            
+                        }
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="/Project/AddProject/" class="btn btn-primary">Add New Project</a>
