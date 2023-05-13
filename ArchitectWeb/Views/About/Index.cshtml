@@ -1,0 +1,46 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0 bg-primary d-inline-flex px-2 py-2 text-white">Edit About Page</h3>
+</div>
+
+<div class="mx-4 my-2">
+    @using (Html.BeginForm("Index", "About", FormMethod.Post))
+    {
+        @Html.HiddenFor(x=>x.AboutId)
+        <br />
+        @Html.Label("About Title")
+        @Html.TextBoxFor(x => x.Title, new{@class = "form-control"})
+        @*@Html.ValidationMessageFor(x=>x.Title)*@
+        <br /> <br />
+        @Html.Label("About Description")
+        @Html.TextAreaFor(x => x.Description,5,2, new{@class = "form-control"})
+        @*@Html.ValidationMessageFor(x=>x.Description1)*@
+        <br /> <br />
+        @Html.Label("About About Image")
+        @Html.TextBoxFor(x => x.AboutImg, new{@class = "form-control"})
+        @*@Html.ValidationMessageFor(x=>x.Description2)*@
+        <br /> <br />
+        @Html.Label("About Name")
+        @Html.TextBoxFor(x => x.Name, new{@class = "form-control"})
+        @*@Html.ValidationMessageFor(x=>x.ImgUrl)*@
+        <br /> <br />
+        @Html.Label("About Email")
+        @Html.TextBoxFor(x => x.Email, new{@class = "form-control"})
+        @*@Html.ValidationMessageFor(x=>x.ImgUrl)*@
+        <br /> <br />
+        @Html.Label("About Phone")
+        @Html.TextBoxFor(x => x.Phone, new{@class = "form-control"})
+        @*@Html.ValidationMessageFor(x=>x.ImgUrl)*@
+        <br /> <br />
+        @Html.Label("About Address")
+        @Html.TextBoxFor(x => x.Address, new{@class = "form-control"})
+        @*@Html.ValidationMessageFor(x=>x.ImgUrl)*@
+        <br /> <br />
+        <button class="btn btn-info mx-3">Update</button>
+    }
+</div>
