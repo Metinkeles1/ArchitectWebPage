@@ -13,7 +13,7 @@ namespace ArchitectWeb.Controllers
         public IActionResult Index()
         {
             ViewBag.v1 = "Project List";
-            ViewBag.v2 = "Projects";
+            ViewBag.v2 = "Project";
             ViewBag.v3 = "Project List";
             var values = projectManager.TGetList();
             return View(values);
@@ -22,7 +22,7 @@ namespace ArchitectWeb.Controllers
         public IActionResult AddProject()
         {
             ViewBag.v1 = "Project List";
-            ViewBag.v2 = "Projects";
+            ViewBag.v2 = "Project";
             ViewBag.v3 = "Add Project";
             return View();
         }
@@ -57,7 +57,7 @@ namespace ArchitectWeb.Controllers
         public IActionResult EditProject(int id)
         {
             ViewBag.v1 = "Project Edit";
-            ViewBag.v2 = "Projects";
+            ViewBag.v2 = "Project";
             ViewBag.v3 = "Edit Project";
             var values = projectManager.TGetByID(id);
             return View(values);

@@ -1,8 +1,35 @@
-﻿
+﻿@model EntityLayer.Concrete.Feature
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>burası content alanıdır</h1>
+<div class="card-header border-0">
+    <h3 class="mb-0 bg-primary d-inline-flex px-2 py-2 text-white">Edit Feature Page</h3>
+</div>
 
+<div class="mx-4 my-2">
+    @using (Html.BeginForm("Index", "Feature", FormMethod.Post))
+    {
+        @Html.HiddenFor(x=>x.FeatureId)
+        <br />
+        @*@Html.Label("Feature Title")*@
+        @Html.TextBoxFor(x => x.Title, new{@class = "form-control"})
+        @*@Html.ValidationMessageFor(x=>x.Title)*@
+        <br /> <br />
+        @*@Html.Label("First Description")*@
+        @Html.TextBoxFor(x => x.Description1, new{@class = "form-control"})
+        @*@Html.ValidationMessageFor(x=>x.Description1)*@
+        <br /> <br />
+        @*@Html.Label("Second Description")*@
+        @Html.TextBoxFor(x => x.Description2, new{@class = "form-control"})
+        @*@Html.ValidationMessageFor(x=>x.Description2)*@
+        <br /> <br />
+        @*@Html.Label("Feature ImgUrl")*@
+        @Html.TextBoxFor(x => x.ImgUrl, new{@class = "form-control"})
+        @*@Html.ValidationMessageFor(x=>x.ImgUrl)*@
+        <br /> <br />       
+        <button class="btn btn-info mx-3">Update</button>
+    }
+</div>
