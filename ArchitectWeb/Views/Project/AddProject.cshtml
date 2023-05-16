@@ -2,32 +2,40 @@
 
 @{
     ViewData["Title"] = "AddProject";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
 <div class="card-header border-0">
-    <h3 class="mb-0 bg-primary d-inline-flex px-2 py-2 text-white">Add Project Page</h3>
+    <h3 class="mb-3 ">Add Project Page</h3>
 </div>
-
-<div class="mx-4 my-2">
-    @using (Html.BeginForm("AddProject", "Project", FormMethod.Post)){
-        <br/>
-        @Html.Label("Project Name")
-        @Html.TextBoxFor(x => x.Name, new{@class = "form-control"})
-        @Html.ValidationMessageFor(x=>x.Name)
-        <br/>
-        @Html.Label("Project Image")
-        @Html.TextBoxFor(x => x.ImageUrl, new{@class = "form-control"})
-        @Html.ValidationMessageFor(x=>x.ImageUrl)
-        <br />
-        @Html.Label("Project Image Small")
-        @Html.TextBoxFor(x => x.ImageUrlSmall, new{@class = "form-control"})
-        @Html.ValidationMessageFor(x=>x.ImageUrlSmall)
-        <br />
-        @Html.Label("Project Url")
-        @Html.TextBoxFor(x => x.ProjectUrl, new{@class = "form-control"})
-        @Html.ValidationMessageFor(x=>x.ProjectUrl)
-        <br />
-        <button class="btn btn-info mx-3">Save</button>
-    }
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-description"> Add New Project </p>
+            <form class="forms-sample" method="post">
+                <div class="form-group mb-4">
+                    <label>Name</label>
+                    @Html.TextBoxFor(x => x.Name, new{@class = "form-control"})
+                    @Html.ValidationMessageFor(x=>x.Name)
+                </div>
+                <div class="form-group mb-4">
+                    <label>Project Image</label>
+                    @Html.TextBoxFor(x => x.ImageUrl, new{@class = "form-control"})
+                    @Html.ValidationMessageFor(x=>x.ImageUrl)
+                </div>
+                <div class="form-group mb-4">
+                    <label>Project Image Small</label>
+                    @Html.TextBoxFor(x => x.ImageUrlSmall, new{@class = "form-control"})
+                    @Html.ValidationMessageFor(x=>x.ImageUrlSmall)
+                </div> 
+                <div class="form-group mb-4">
+                    <label>Project Url</label>
+                    @Html.TextBoxFor(x => x.ProjectUrl, new{@class = "form-control"})
+                    @Html.ValidationMessageFor(x=>x.ProjectUrl)
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Save</button>
+                <button class="btn btn-dark">Close</button>
+            </form>
+        </div>
+    </div>
 </div>

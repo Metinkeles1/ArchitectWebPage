@@ -3,7 +3,7 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
 
@@ -18,7 +18,7 @@
                 <table class="table align-items-center table-dark table-flush">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col" class="sort" data-sort="name">Projects</th>
+                            <th scope="col" class="sort" data-sort="name">Project Name</th>
                             <th scope="col" class="sort" data-sort="budget">Project Address</th>
                             <th scope="col" class="sort" data-sort="status">Status</th>                          
                             <th scope="col" class="sort" data-sort="delete"></th>                          
@@ -83,4 +83,5 @@
         </div>
     </div>
 </div>
+<br/>
 <a href="/Project/AddProject/" class="btn btn-primary">Add New Project</a>
