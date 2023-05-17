@@ -13,6 +13,6 @@ namespace EntityLayer.Concrete
         public int ServiceId { get; set; }
         public string Title { get; set; }
         public string ServiceImg { get; set; }
-        public ICollection<ServiceItem> ServiceItem { get; set; }
+        public List<ServiceItem> ServiceItem { get; set; }
     }
 }
