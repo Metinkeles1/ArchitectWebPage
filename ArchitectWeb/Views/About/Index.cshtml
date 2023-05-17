@@ -5,42 +5,48 @@
 }
 
 <div class="card-header border-0">
-    <h3 class="mb-0">Edit About Page</h3>
+    <h3 class="mb-3 ">Edit About Page</h3>
 </div>
-
-<div class="mx-4 my-2">
-    @using (Html.BeginForm("Index", "About", FormMethod.Post))
-    {
-        @Html.HiddenFor(x=>x.AboutId)
-        <br />
-        @Html.Label("About Title")
-        @Html.TextBoxFor(x => x.Title, new{@class = "form-control"})
-        @*@Html.ValidationMessageFor(x=>x.Title)*@
-        <br /> <br />
-        @Html.Label("About Description")
-        @Html.TextAreaFor(x => x.Description,5,2, new{@class = "form-control"})
-        @*@Html.ValidationMessageFor(x=>x.Description1)*@
-        <br /> <br />
-        @Html.Label("About About Image")
-        @Html.TextBoxFor(x => x.AboutImg, new{@class = "form-control"})
-        @*@Html.ValidationMessageFor(x=>x.Description2)*@
-        <br /> <br />
-        @Html.Label("About Name")
-        @Html.TextBoxFor(x => x.Name, new{@class = "form-control"})
-        @*@Html.ValidationMessageFor(x=>x.ImgUrl)*@
-        <br /> <br />
-        @Html.Label("About Email")
-        @Html.TextBoxFor(x => x.Email, new{@class = "form-control"})
-        @*@Html.ValidationMessageFor(x=>x.ImgUrl)*@
-        <br /> <br />
-        @Html.Label("About Phone")
-        @Html.TextBoxFor(x => x.Phone, new{@class = "form-control"})
-        @*@Html.ValidationMessageFor(x=>x.ImgUrl)*@
-        <br /> <br />
-        @Html.Label("About Address")
-        @Html.TextBoxFor(x => x.Address, new{@class = "form-control"})
-        @*@Html.ValidationMessageFor(x=>x.ImgUrl)*@
-        <br /> <br />
-        <button class="btn btn-info mx-3">Update</button>
-    }
-</div>
+@using (Html.BeginForm("Index", "About", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-description"> Edit About </p>
+                <form class="forms-sample">
+                    @Html.HiddenFor(x=>x.AboutId)
+                    <div class="form-group mb-4">
+                        <label>Title</label>
+                        @Html.TextBoxFor(x => x.Title, new{@class = "form-control"})
+                    </div>
+                    <div class="form-group mb-4">
+                        <label>Description</label>
+                        @Html.TextAreaFor(x => x.Description,5,2, new{@class = "form-control"})
+                    </div>
+                    <div class="form-group mb-4">
+                        <label>About Image</label>
+                        @Html.TextBoxFor(x => x.AboutImg, new{@class = "form-control"})
+                    </div>
+                    <div class="form-group mb-4">
+                        <label>About Name</label>
+                        @Html.TextBoxFor(x => x.Name, new{@class = "form-control"})
+                    </div>
+                    <div class="form-group mb-4">
+                        <label>About Email</label>
+                        @Html.TextBoxFor(x => x.Email, new{@class = "form-control"})
+                    </div> 
+                    <div class="form-group mb-4">
+                        <label>About Email</label>
+                        @Html.TextBoxFor(x => x.Phone, new{@class = "form-control"})
+                    </div>
+                    <div class="form-group mb-4">
+                        <label>Address</label>
+                        @Html.TextBoxFor(x => x.Address, new{@class = "form-control"})
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Save</button>
+                    <button class="btn btn-dark">Close</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
