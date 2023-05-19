@@ -6,10 +6,11 @@ namespace ArchitectWeb.ViewComponents.Service
 {
     public class ServiceList : ViewComponent
     {
-        ServiceManager serviceManager = new ServiceManager(new EfServiceDal());        
+        ServiceItemManager serviceItemManager = new ServiceItemManager(new EfServiceItemDal());
+        //ServiceManager serviceManager = new ServiceManager(new EfServiceDal());        
         public IViewComponentResult Invoke()
         {
-            var values = serviceManager.TGetList();
+            var values = serviceItemManager.GetItemWithService();            
             return View(values);
         }
     }

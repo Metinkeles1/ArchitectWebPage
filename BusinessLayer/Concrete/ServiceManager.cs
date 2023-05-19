@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,11 @@ namespace BusinessLayer.Concrete
         {
             _serviceDal = serviceDal;
         }
+
+        //public List<Service> GetItemWithService()
+        //{
+        //    return _serviceDal.GetItemsWithService();
+        //}
 
         public void TAdd(Service t)
         {
@@ -42,5 +48,6 @@ namespace BusinessLayer.Concrete
         {
             _serviceDal.Update(t);
         }
+        
     }
 }

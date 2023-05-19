@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface IServiceItemService : IGenericService<ServiceItem>
     {
+        List<ServiceItem> GetItemWithService();
     }
 }

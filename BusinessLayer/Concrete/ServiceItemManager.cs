@@ -18,6 +18,11 @@ namespace BusinessLayer.Concrete
             _serviceItemDal = serviceItemDal;
         }
 
+        public List<ServiceItem> GetItemWithService()
+        {
+            return _serviceItemDal.GetItemsWithService();
+        }
+
         public void TAdd(ServiceItem t)
         {
             _serviceItemDal.Insert(t);

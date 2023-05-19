@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface IServiceDal : IGenericDal<Service>
     {
+        //public List<Service> GetItemsWithService();
     }
 }
