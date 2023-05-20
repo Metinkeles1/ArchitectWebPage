@@ -1,5 +1,5 @@
 # Corporate Website
-(C# - ACCESS)
+(.Net Core, C#, Html, Css, Bootstrap, SqlServer, Database, Layers, EntityFrameWork, CodeFirst, Fluent Validation)
 
 This web page is a site specially designed for companies or individuals.
 It is a corporate website. the site is dynamic. pulls data from sql database
@@ -13,7 +13,7 @@ Admin Page
 <img src="ArchitectWebsiteAdmin.gif"></img>
 </br>
 
-.Net Core, C#, Html, Css, Bootstrap, SqlServer, Database, Layers
+
 
 ## Project layers
 There is an admin page.
