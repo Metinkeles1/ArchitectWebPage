@@ -234,8 +234,11 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.SocialMedia", b =>
                 {
-                    b.Property<string>("SocialMediaId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("SocialMediaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SocialMediaId"));
 
                     b.Property<string>("Icon")
                         .IsRequired()
