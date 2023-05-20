@@ -4,9 +4,12 @@
 This web page is a site specially designed for companies or individuals.
 It is a corporate website. the site is dynamic. pulls data from sql database
 
+Default Page
+
 <img src="ArchitectWebsiteDefault.gif" center></img>
 </br>
 
+Admin Page
 <img src="ArchitectWebsiteAdmin.gif"></img>
 </br>
 
